@@ -18,7 +18,7 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('https://vendorsourcingapp-backend.onrender.com', form);
+      await axios.post('https://vendorsourcingapp-backend.onrender.com/api/auth/register', form);
       alert('Registered successfully! Redirecting to login...');
       navigate('/login');
     } catch (err) {
