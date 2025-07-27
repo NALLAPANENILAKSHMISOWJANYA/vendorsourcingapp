@@ -12,7 +12,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('https://vendorsourcingapp-backend.onrender.com', form);
+      const res = await axios.post('https://vendorsourcingapp-backend.onrender.com/api/auth/login', form);
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('role', res.data.user.role);
 
