@@ -56,7 +56,7 @@ function VendorDashboard() {
     }
 
     try {
-      await axios.post('http://localhost:5000/api/orders/place', {
+      await axios.post('https://vendorsourcingapp-backend.onrender.com', {
         productId: selectedProduct._id,
         quantityKg,
         phone,
@@ -77,7 +77,7 @@ function VendorDashboard() {
 
   const fetchProducts = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/products/all');
+      const res = await axios.get('https://vendorsourcingapp-backend.onrender.com');
       setProducts(res.data);
     } catch (err) {
       console.error('Product fetch error:', err);
@@ -86,7 +86,7 @@ function VendorDashboard() {
 
   const fetchOrders = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/orders/my-orders', {
+      const res = await axios.get('https://vendorsourcingapp-backend.onrender.com', {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }
