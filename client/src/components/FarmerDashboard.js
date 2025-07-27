@@ -11,7 +11,7 @@ function FarmerDashboard() {
 
   const fetchMyProducts = async () => {
     try {
-      const res = await axios.get('https://vendorsourcingapp-backend.onrender.com', {
+      const res = await axios.get('https://vendorsourcingapp-backend.onrender.com/api/products/my-products', {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }
@@ -24,7 +24,7 @@ function FarmerDashboard() {
 
   const fetchOrders = async () => {
     try {
-      const res = await axios.get('https://vendorsourcingapp-backend.onrender.com', {
+      const res = await axios.get('https://vendorsourcingapp-backend.onrender.com/api/farmer/orders', {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }
