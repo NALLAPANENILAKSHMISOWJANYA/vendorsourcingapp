@@ -15,7 +15,7 @@ function AddProductForm({ onProductAdded }) {
   const handleSubmit = async e => {
     e.preventDefault();
     try {
-      await axios.post('https://vendorsourcingapp-backend.onrender.com//api/products/add', form, {
+      await axios.post('https://vendorsourcingapp-backend.onrender.com/api/products/add', form, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }
